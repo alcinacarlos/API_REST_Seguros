@@ -58,9 +58,9 @@ data class Seguro(
 ```
 ## Capa Repository
 ### ISeguroRepository
+#### [Enlace a ISeguroRepository](src/main/kotlin/com/example/unsecuredseguros/repository/ISeguroRepository.kt)
 La uso para conectarse a la base de datos y abstraer el resto de capas  
 Heredo de la interfaz [JpaRepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html) para tener métodos CRUD y usarlos posteriormente en la Capa Service
-[Enlace a ISeguroRepository](src/main/kotlin/com/example/unsecuredseguros/repository/ISeguroRepository.kt)
 ```kotlin
 @Repository
 interface ISeguroRepository: JpaRepository<Seguro, Long> {
@@ -69,8 +69,8 @@ interface ISeguroRepository: JpaRepository<Seguro, Long> {
 ## Capa Service
 Esta capa gestiona la lógica de negocio de la aplicación y actua como intermediario entre la capa controller y la capa repository
 ### SeguroService
+#### [Enlace a SeguroService](src/main/kotlin/com/example/unsecuredseguros/service/SeguroService.kt)
 En las funciones **insert** y **update** devuelvo la clase la clase *Any* de la que heredan todas las clases de Kotlin para poder mostrar en el controller mensajes de control de errores como *DNI no válido*, *Edad no válida* y no que simplemente devolver **null** sin saber qué está mal  
-[Enlace a SeguroService](src/main/kotlin/com/example/unsecuredseguros/service/SeguroService.kt)
 ```kotlin
 @Service
 class SeguroService() {
@@ -189,7 +189,6 @@ class SeguroController() {
 }
 ```
 ## Utilidades
-### ISeguroRepository
 #### [Enlace a Utilidades](src/main/kotlin/com/example/unsecuredseguros/utils/Utilidades.kt)
 Tengo un objeto **Utilidades** que lo uso para llamar a funciones estáticas como **validarDni** o **validarSeguro**, así consigo un código más limpio dentro de la capa **Service**
 ```kotlin
@@ -221,6 +220,25 @@ fun validarDni(dni: String): Boolean {
     }
 ```
 # Capturas Funcionamiento
+## **GET** `/seguros`
+![getall.png](img/getall.png)![Alt text](https://assets.digitalocean.com/ar)
+## **GET** `/seguros/{id}`
+![get.png](img/get.png)
+## **POST** `/seguros`
+![postok.png](img/postok.png)
+### Validaciones POST & PUT
+![apellidopost.png](img/apellidopost.png)
+![casadohijospost.png](img/casadohijospost.png)
+![dnipost.png](img/dnipost.png)
+![edadpost.png](img/edadpost.png)
+![embarazadapost.png](img/embarazadapost.png)
+![hijospost.png](img/hijospost.png)
+![nombrepost.png](img/nombrepost.png)
+![sexopost.png](img/sexopost.png)
+## **PUT** `/seguros/{id}`
+![put.png](img/put.png)
+## **DELETE** `/seguros/{id}`
+![delete.png](img/delete.png)
 
 # Enunciado
 En este ejercicio, vamos a desarrollar una aplicación básica en **Spring Boot** utilizando **Kotlin** que permita gestionar entidades de tipo **Seguro**. La aplicación deberá implementar un conjunto de operaciones CRUD a través de métodos HTTP para interactuar con la tabla asociada al modelo de datos.
