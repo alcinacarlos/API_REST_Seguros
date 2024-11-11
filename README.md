@@ -1,6 +1,11 @@
 
 # Ejercicio 1: Gestión de Seguros en una Aplicación Spring Boot con Kotlin
+# Entrega
 
+
+
+
+# Enunciado
 En este ejercicio, vamos a desarrollar una aplicación básica en **Spring Boot** utilizando **Kotlin** que permita gestionar entidades de tipo **Seguro**. La aplicación deberá implementar un conjunto de operaciones CRUD a través de métodos HTTP para interactuar con la tabla asociada al modelo de datos.
 
 ## Parte 1: Definición de la Entidad y Controlador
