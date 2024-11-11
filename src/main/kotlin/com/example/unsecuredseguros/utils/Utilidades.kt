@@ -3,7 +3,7 @@ package com.example.unsecuredseguros.utils
 import com.example.unsecuredseguros.model.Seguro
 
 object Utilidades {
-    fun checkDni(dni: String): Boolean {
+    fun validarDni(dni: String): Boolean {
         val dniRegex = Regex("^[0-9]{8}[A-Z]$")
         if (!dniRegex.matches(dni)) return false
 
@@ -15,7 +15,7 @@ object Utilidades {
     }
 
     fun validarSeguro(seguro: Seguro): String? {
-        if (!Utilidades.checkDni(seguro.nif)) return "El NIF no es válido"
+        if (!Utilidades.validarDni(seguro.nif)) return "El NIF no es válido"
         if (seguro.nombre.isEmpty()) return "El nombre no puede estar vacío"
         if (seguro.ape1.isEmpty()) return "El primer apellido no puede estar vacío"
         if (seguro.edad <= 0) return "La edad debe ser mayor que 0"

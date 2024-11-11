@@ -51,5 +51,4 @@ class SeguroController() {
         return seguroService.update(seguro)
     }
 
-
 }
