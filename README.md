@@ -221,7 +221,7 @@ fun validarDni(dni: String): Boolean {
 ```
 # Capturas Funcionamiento
 ## **GET** `/seguros`
-![getall.png](img/getall.png)![Alt text](https://assets.digitalocean.com/ar)
+![getall.png](img/getall.png)
 ## **GET** `/seguros/{id}`
 ![get.png](img/get.png)
 ## **POST** `/seguros`
